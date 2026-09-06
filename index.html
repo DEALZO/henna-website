@@ -10,7 +10,10 @@
         
         /* HEADER BANNER */
         header { 
-            background: url('https://drive.google.com/uc?export=view&id=1kKd5txmWyPYaVwoD6vS3GzYDSh4ZYjrE') center/cover no-repeat; 
+            background-image: url('banner.jpg'); /* <-- Yahan file ka naam */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             height: 600px; 
             display: flex; 
             align-items: center; 
@@ -23,14 +26,15 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.4); /* dark overlay so text is readable */
+            background: rgba(0,0,0,0.5); /* dark overlay so text is readable */
         }
         .header-text {
             position: relative;
             z-index: 1;
+            padding: 20px;
         }
-        header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px #000; }
-        header p { font-size: 1.5em; text-shadow: 1px 1px 3px #000; }
+        header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 6px #000; }
+        header p { font-size: 1.5em; text-shadow: 1px 1px 4px #000; }
 
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         .designs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
@@ -44,7 +48,6 @@
         footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
         footer a { color: #D2691E; text-decoration: none; }
 
-        /* Popup CSS */
         .popup { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); }
         .popup-content { background-color: #fff; margin: 10% auto; padding: 30px; border-radius: 15px; width: 90%; max-width: 500px; position: relative; }
         .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
@@ -52,9 +55,7 @@
         .popup-content h2 { color: #8B4513; margin-bottom: 20px; }
         .popup-content input, .popup-content textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; }
         .popup-content button { width: 100%; background: #25D366; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin-top: 10px; }
-        .popup-content button:hover { background: #128C7E; }
 
-        /* Mobile */
         @media(max-width: 768px) {
             header { height: 400px; }
             header h1 { font-size: 2em; }
@@ -74,49 +75,42 @@
     <div class="container">
         <h2 style="text-align:center; margin-bottom: 30px; color: #8B4513;">Our 6 Signature Designs</h2>
         <div class="designs">
-            
             <div class="card">
                 <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd464126b56644d5e91f5cc7a2426e36c1.jpg_220x220q75.jpg_.avif" alt="Bridal Henna Design 1">
                 <h3>Bridal Royal Design</h3>
                 <p>Full hands and feet intricate bridal pattern</p>
                 <button class="btn" onclick="openPopup('Bridal Royal Design')">Book Appointment</button>
             </div>
-
             <div class="card">
                 <img src="https://ae-pic-a1.aliexpress-media.com/kf/S623e1f99566d45be9ae17db8e17de614B.jpg_220x220q75.jpg_.avif" alt="Arabic Henna Design">
                 <h3>Arabic Floral Design</h3>
                 <p>Bold and beautiful Arabic style for hands</p>
                 <button class="btn" onclick="openPopup('Arabic Floral Design')">Book Appointment</button>
             </div>
-
             <div class="card">
                 <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8643d7dae48e430682499a5a50c72b5dR.jpg_220x220q75.jpg_.avif" alt="Back Hand Design">
                 <h3>Back Hand Mandala</h3>
                 <p>Elegant mandala design for back of hand</p>
                 <button class="btn" onclick="openPopup('Back Hand Mandala')">Book Appointment</button>
             </div>
-
             <div class="card">
                 <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8ff0c172565d484a9348b70ef8724f4cF.jpg_220x220q75.jpg_.avif" alt="Feet Henna Design">
                 <h3>Feet Bridal Design</h3>
                 <p>Complete feet coverage for brides</p>
                 <button class="btn" onclick="openPopup('Feet Bridal Design')">Book Appointment</button>
             </div>
-
             <div class="card">
                 <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se2730ce70f6248eeb299b75c7eedcc08F.jpg_220x220q75.jpg_.avif" alt="Simple Party Design">
                 <h3>Simple Party Design</h3>
                 <p>Quick and cute design for events</p>
                 <button class="btn" onclick="openPopup('Simple Party Design')">Book Appointment</button>
             </div>
-
             <div class="card">
                 <img src="https://ae-pic-a1.aliexpress-media.com/kf/S564ae24f75304b9ba942a479958dff145.jpg_220x220q75.jpg_.avif" alt="Pakistani Design">
                 <h3>Pakistani Jaali Design</h3>
                 <p>Traditional detailed jaali work</p>
                 <button class="btn" onclick="openPopup('Pakistani Jaali Design')">Book Appointment</button>
             </div>
-
         </div>
     </div>
 
@@ -125,7 +119,6 @@
         <p>© 2026 [Your Brand Name]. All Rights Reserved.</p>
     </footer>
 
-    <!-- Appointment Popup -->
     <div id="appointmentPopup" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
@@ -155,17 +148,12 @@
             let name = document.getElementById("name").value;
             let number = document.getElementById("number").value;
             let comment = document.getElementById("comment").value;
-            let yourWhatsApp = "92XXXXXXXXXXX"; // <-- YAHAN APNA NUMBER LAGAO BINA + KE
+            let yourWhatsApp = "92XXXXXXXXXXX"; 
 
             let message = `New Appointment Request%0A%0A*Design:* ${selectedDesign}%0A*Name:* ${name}%0A*Number:* ${number}%0A*Date/Time:* ${comment}`;
             let url = `https://wa.me/${yourWhatsApp}?text=${message}`;
             window.open(url, '_blank');
             closePopup();
-        }
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("appointmentPopup")) {
-                closePopup();
-            }
         }
     </script>
 
