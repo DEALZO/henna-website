@@ -18,20 +18,19 @@
 
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         
-        /* HEADING STYLE */
         .section-title { text-align: center; margin-bottom: 10px; color: #8B4513; font-size: 2em; }
         .section-subtitle { text-align: center; margin-bottom: 30px; color: #666; }
 
-        /* DESIGNS GRID */
-        .designs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* GRID - DESKTOP 4 COLUMNS */
+        .designs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
         .card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; text-align: center; transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card img { width: 100%; height: 280px; object-fit: cover; }
         .card-content { padding: 15px; }
-        .card h3 { color: #8B4513; margin-bottom: 5px; }
+        .card h3 { color: #8B4513; margin-bottom: 5px; font-size: 1.1em; }
         .card .price { font-size: 1.2em; font-weight: bold; color: #D2691E; margin-bottom: 10px; }
-        .card p { color: #666; font-size: 0.9em; margin-bottom: 15px; }
-        .btn { display: block; background: #8B4513; color: white; padding: 12px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; text-decoration: none; width: 100%; }
+        .card p { color: #666; font-size: 0.85em; margin-bottom: 15px; height: 40px; }
+        .btn { display: block; background: #8B4513; color: white; padding: 10px; border: none; border-radius: 8px; font-size: 0.95em; cursor: pointer; text-decoration: none; width: 100%; }
         .btn:hover { background: #5a2d0c; }
         
         footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
@@ -45,9 +44,20 @@
         .popup-content input, .popup-content textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; }
         .popup-content button { width: 100%; background: #25D366; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin-top: 10px; }
 
+        /* MOBILE RESPONSIVE - 2 PRODUCTS IN 1 ROW */
+        @media(max-width: 1024px) {
+            .designs { grid-template-columns: repeat(3, 1fr); }
+        }
         @media(max-width: 768px) {
             header { height: 180px; }
-            .card img { height: 250px; }
+            .designs { grid-template-columns: repeat(2, 1fr); gap: 15px; } /* Yahan 2 column */
+            .card img { height: 200px; }
+            .section-title { font-size: 1.5em; }
+        }
+        @media(max-width: 480px) {
+            .designs { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .card-content { padding: 10px; }
+            .card h3 { font-size: 1em; }
         }
     </style>
 </head>
@@ -57,103 +67,127 @@
 
     <div class="container">
         
-        <!-- SECTION 1: TOP DEMANDING DESIGNS -->
         <h2 class="section-title">Top Demanding Designs</h2>
         <p class="section-subtitle">Our most-loved designs, chosen for their flawless detail</p>
         <div class="designs">
+            <!-- 1 -->
             <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-16.jpeg" alt="Zahreen Design">
+                <img src="https://hennabymk.com/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-08-at-19.48.36.webp" alt="Royal Bloom Design">
                 <div class="card-content">
-                    <h3>Zahreen</h3>
+                    <h3>Royal Bloom</h3>
+                    <p class="price">Rs: 1,450</p>
+                    <p>Full hand royal mandala design</p>
+                    <button class="btn" onclick="openPopup('Royal Bloom')">Book Now</button>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="card">
+                <img src="https://hennabymk.com/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-08-at-19.45.25-1-1.webp" alt="Gulnaaz Design">
+                <div class="card-content">
+                    <h3>Gulnaaz</h3>
                     <p class="price">Rs: 1,200</p>
-                    <p>Royal circular mandala with detailed finger work</p>
-                    <button class="btn" onclick="openPopup('Zahreen')">Book Appointment</button>
+                    <p>Elegant floral trail pattern</p>
+                    <button class="btn" onclick="openPopup('Gulnaaz')">Book Now</button>
                 </div>
             </div>
+            <!-- 3 -->
             <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-11-600x600.jpeg" alt="Naaz Design">
+                <img src="https://hennabymk.com/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-08-at-19.45.10-2.webp" alt="Noorani Design">
                 <div class="card-content">
-                    <h3>Naaz</h3>
-                    <p class="price">Rs: 890</p>
-                    <p>Elegant trail design with floral centerpiece</p>
-                    <button class="btn" onclick="openPopup('Naaz')">Book Appointment</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-10.jpeg" alt="Sultana Design">
-                <div class="card-content">
-                    <h3>Sultana</h3>
+                    <h3>Noorani</h3>
                     <p class="price">Rs: 1,350</p>
-                    <p>Heavy jaali work with backhand detail</p>
-                    <button class="btn" onclick="openPopup('Sultana')">Book Appointment</button>
+                    <p>Delicate backhand jaali work</p>
+                    <button class="btn" onclick="openPopup('Noorani')">Book Now</button>
                 </div>
             </div>
+            <!-- 4 -->
             <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-9-scaled.jpeg" alt="Jahanara Design">
+                <img src="https://hennabymk.com/wp-content/uploads/2025/01/photo-output-6-scaled-400x400.jpeg.webp" alt="Chandni Design">
                 <div class="card-content">
-                    <h3>Jahanara</h3>
-                    <p class="price">Rs: 1,500</p>
-                    <p>Full arm bridal design with intricate patterns</p>
-                    <button class="btn" onclick="openPopup('Jahanara')">Book Appointment</button>
+                    <h3>Chandni</h3>
+                    <p class="price">Rs: 990</p>
+                    <p>Simple and cute festival design</p>
+                    <button class="btn" onclick="openPopup('Chandni')">Book Now</button>
                 </div>
             </div>
-        </div>
-
-        <!-- SECTION 2: OUR 6 SIGNATURE DESIGNS -->
-        <h2 class="section-title" style="margin-top: 60px;">Our 6 Signature Designs</h2>
-        <div class="designs">
+            <!-- 5 -->
             <div class="card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd464126b56644d5e91f5cc7a2426e36c1.jpg_220x220q75.jpg_.avif" alt="Bridal Henna Design">
+                <img src="https://hennabymk.com/wp-content/uploads/2025/01/photo-output-2-1-scaled-400x400.jpeg.webp" alt="Mehak Design">
                 <div class="card-content">
-                    <h3>Bridal Mehendi</h3>
-                    <p class="price">Rs: 2,000</p>
-                    <p>Full hands and feet intricate bridal pattern</p>
-                    <button class="btn" onclick="openPopup('Bridal Mehendi')">Book Appointment</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S623e1f99566d45be9ae17db8e17de614B.jpg_220x220q75.jpg_.avif" alt="Modern Henna Design">
-                <div class="card-content">
-                    <h3>Modern Mehendi</h3>
-                    <p class="price">Rs: 950</p>
-                    <p>Trendy and stylish modern designs</p>
-                    <button class="btn" onclick="openPopup('Modern Mehendi')">Book Appointment</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8643d7dae48e430682499a5a50c72b5dR.jpg_220x220q75.jpg_.avif" alt="Festival Design">
-                <div class="card-content">
-                    <h3>Festival Mehendi</h3>
-                    <p class="price">Rs: 750</p>
-                    <p>Eid, Chand Raat & Festival special</p>
-                    <button class="btn" onclick="openPopup('Festival Mehendi')">Book Appointment</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8ff0c172565d484a9348b70ef8724f4cF.jpg_220x220q75.jpg_.avif" alt="Engagement Design">
-                <div class="card-content">
-                    <h3>Engagement Mehendi</h3>
+                    <h3>Mehak</h3>
                     <p class="price">Rs: 1,100</p>
-                    <p>Elegant designs for engagement events</p>
-                    <button class="btn" onclick="openPopup('Engagement Mehendi')">Book Appointment</button>
+                    <p>Modern minimal hand design</p>
+                    <button class="btn" onclick="openPopup('Mehak')">Book Now</button>
                 </div>
             </div>
+            <!-- 6 -->
             <div class="card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se2730ce70f6248eeb299b75c7eedcc08F.jpg_220x220q75.jpg_.avif" alt="Simple Party Design">
+                <img src="https://hennabymk.com/wp-content/uploads/2025/01/photo-output-2-scaled-400x400.jpeg.webp" alt="Rubaab Design">
                 <div class="card-content">
-                    <h3>Simple Party Design</h3>
-                    <p class="price">Rs: 500</p>
-                    <p>Quick and cute design for events</p>
-                    <button class="btn" onclick="openPopup('Simple Party Design')">Book Appointment</button>
+                    <h3>Rubaab</h3>
+                    <p class="price">Rs: 1,500</p>
+                    <p>Heavy bridal arm design</p>
+                    <button class="btn" onclick="openPopup('Rubaab')">Book Now</button>
                 </div>
             </div>
+            <!-- 7 -->
             <div class="card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S564ae24f75304b9ba942a479958dff145.jpg_220x220q75.jpg_.avif" alt="Pakistani Design">
+                <img src="https://hennabymk.com/wp-content/uploads/2023/11/photo-output-31-400x400.webp" alt="Areeba Design">
                 <div class="card-content">
-                    <h3>Pakistani Jaali Design</h3>
+                    <h3>Areeba</h3>
+                    <p class="price">Rs: 890</p>
+                    <p>Quick party wear design</p>
+                    <button class="btn" onclick="openPopup('Areeba')">Book Now</button>
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="card">
+                <img src="https://hennabymk.com/wp-content/uploads/2023/11/photo-output-10-1-400x400.webp" alt="Zoya Design">
+                <div class="card-content">
+                    <h3>Zoya</h3>
+                    <p class="price">Rs: 1,250</p>
+                    <p>Engagement special design</p>
+                    <button class="btn" onclick="openPopup('Zoya')">Book Now</button>
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="card">
+                <img src="https://hennabymk.com/wp-content/uploads/2023/11/photo-output-7-400x400.jpeg" alt="Hoorain Design">
+                <div class="card-content">
+                    <h3>Hoorain</h3>
                     <p class="price">Rs: 1,400</p>
-                    <p>Traditional detailed jaali work</p>
-                    <button class="btn" onclick="openPopup('Pakistani Jaali Design')">Book Appointment</button>
+                    <p>Traditional Pakistani jaali</p>
+                    <button class="btn" onclick="openPopup('Hoorain')">Book Now</button>
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="card">
+                <img src="https://hennabymk.com/wp-content/uploads/2024/08/img_4762-400x400.jpeg" alt="Mahnoor Design">
+                <div class="card-content">
+                    <h3>Mahnoor</h3>
+                    <p class="price">Rs: 1,000</p>
+                    <p>Eid & Mehndi night special</p>
+                    <button class="btn" onclick="openPopup('Mahnoor')">Book Now</button>
+                </div>
+            </div>
+            <!-- 11 -->
+            <div class="card">
+                <img src="https://hennabymk.com/wp-content/uploads/2022/05/Violet-2-400x400.jpg" alt="Violet Design">
+                <div class="card-content">
+                    <h3>Violet</h3>
+                    <p class="price">Rs: 1,150</p>
+                    <p>Stylish finger tip design</p>
+                    <button class="btn" onclick="openPopup('Violet')">Book Now</button>
+                </div>
+            </div>
+            <!-- 12 -->
+            <div class="card">
+                <img src="https://hennabymk.com/wp-content/uploads/2022/05/JASMIN-1-400x400.jpg" alt="Jasmin Design">
+                <div class="card-content">
+                    <h3>Jasmin</h3>
+                    <p class="price">Rs: 1,300</p>
+                    <p>Classic bridal palm design</p>
+                    <button class="btn" onclick="openPopup('Jasmin')">Book Now</button>
                 </div>
             </div>
         </div>
