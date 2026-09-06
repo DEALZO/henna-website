@@ -17,11 +17,9 @@
         }
 
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        
         .section-title { text-align: center; margin-bottom: 10px; color: #8B4513; font-size: 2em; }
         .section-subtitle { text-align: center; margin-bottom: 30px; color: #666; }
 
-        /* GRID - DESKTOP 4 COLUMNS */
         .designs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
         .card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; text-align: center; transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); }
@@ -32,8 +30,6 @@
         .card p { color: #666; font-size: 0.85em; margin-bottom: 15px; height: 40px; }
         .btn { display: block; background: #8B4513; color: white; padding: 10px; border: none; border-radius: 8px; font-size: 0.95em; cursor: pointer; text-decoration: none; width: 100%; }
         .btn:hover { background: #5a2d0c; }
-        
-        /* MOST DEMANDING BADGE */
         .badge { background: #D2691E; color: white; font-size: 0.75em; padding: 4px 8px; border-radius: 5px; display: inline-block; margin-bottom: 8px; }
 
         footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
@@ -47,10 +43,7 @@
         .popup-content input, .popup-content textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; }
         .popup-content button { width: 100%; background: #25D366; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin-top: 10px; }
 
-        /* MOBILE RESPONSIVE - 2 PRODUCTS IN 1 ROW */
-        @media(max-width: 1024px) {
-            .designs { grid-template-columns: repeat(3, 1fr); }
-        }
+        @media(max-width: 1024px) { .designs { grid-template-columns: repeat(3, 1fr); } }
         @media(max-width: 768px) {
             header { height: 180px; }
             .designs { grid-template-columns: repeat(2, 1fr); gap: 15px; } /* Mobile 2 column */
@@ -63,183 +56,8 @@
 
     <header></header>
 
-    <div class="container">
-        
-        <!-- SECTION 1: NORMAL COLLECTION - 12 DESIGNS -->
-        <h2 class="section-title">Our Signature Collection</h2>
-        <p class="section-subtitle">Beautiful designs for every occasion</p>
-        <div class="designs">
-            <!-- 1 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-08-at-19.48.36.webp" alt="Royal Bloom Design">
-                <div class="card-content">
-                    <h3>Royal Bloom</h3>
-                    <p class="price">Rs: 1,450</p>
-                    <p>Full hand royal mandala design</p>
-                    <button class="btn" onclick="openPopup('Royal Bloom')">Book Now</button>
-                </div>
-            </div>
-            <!-- 2 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-08-at-19.45.25-1-1.webp" alt="Gulnaaz Design">
-                <div class="card-content">
-                    <h3>Gulnaaz</h3>
-                    <p class="price">Rs: 1,200</p>
-                    <p>Elegant floral trail pattern</p>
-                    <button class="btn" onclick="openPopup('Gulnaaz')">Book Now</button>
-                </div>
-            </div>
-            <!-- 3 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-08-at-19.45.10-2.webp" alt="Noorani Design">
-                <div class="card-content">
-                    <h3>Noorani</h3>
-                    <p class="price">Rs: 1,350</p>
-                    <p>Delicate backhand jaali work</p>
-                    <button class="btn" onclick="openPopup('Noorani')">Book Now</button>
-                </div>
-            </div>
-            <!-- 4 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2025/01/photo-output-6-scaled-400x400.jpeg.webp" alt="Chandni Design">
-                <div class="card-content">
-                    <h3>Chandni</h3>
-                    <p class="price">Rs: 990</p>
-                    <p>Simple and cute festival design</p>
-                    <button class="btn" onclick="openPopup('Chandni')">Book Now</button>
-                </div>
-            </div>
-            <!-- 5 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2025/01/photo-output-2-1-scaled-400x400.jpeg.webp" alt="Mehak Design">
-                <div class="card-content">
-                    <h3>Mehak</h3>
-                    <p class="price">Rs: 1,100</p>
-                    <p>Modern minimal hand design</p>
-                    <button class="btn" onclick="openPopup('Mehak')">Book Now</button>
-                </div>
-            </div>
-            <!-- 6 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2025/01/photo-output-2-scaled-400x400.jpeg.webp" alt="Rubaab Design">
-                <div class="card-content">
-                    <h3>Rubaab</h3>
-                    <p class="price">Rs: 1,500</p>
-                    <p>Heavy bridal arm design</p>
-                    <button class="btn" onclick="openPopup('Rubaab')">Book Now</button>
-                </div>
-            </div>
-            <!-- 7 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2023/11/photo-output-31-400x400.webp" alt="Areeba Design">
-                <div class="card-content">
-                    <h3>Areeba</h3>
-                    <p class="price">Rs: 890</p>
-                    <p>Quick party wear design</p>
-                    <button class="btn" onclick="openPopup('Areeba')">Book Now</button>
-                </div>
-            </div>
-            <!-- 8 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2023/11/photo-output-10-1-400x400.webp" alt="Zoya Design">
-                <div class="card-content">
-                    <h3>Zoya</h3>
-                    <p class="price">Rs: 1,250</p>
-                    <p>Engagement special design</p>
-                    <button class="btn" onclick="openPopup('Zoya')">Book Now</button>
-                </div>
-            </div>
-            <!-- 9 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2023/11/photo-output-7-400x400.jpeg" alt="Hoorain Design">
-                <div class="card-content">
-                    <h3>Hoorain</h3>
-                    <p class="price">Rs: 1,400</p>
-                    <p>Traditional Pakistani jaali</p>
-                    <button class="btn" onclick="openPopup('Hoorain')">Book Now</button>
-                </div>
-            </div>
-            <!-- 10 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2024/08/img_4762-400x400.jpeg" alt="Mahnoor Design">
-                <div class="card-content">
-                    <h3>Mahnoor</h3>
-                    <p class="price">Rs: 1,000</p>
-                    <p>Eid & Mehndi night special</p>
-                    <button class="btn" onclick="openPopup('Mahnoor')">Book Now</button>
-                </div>
-            </div>
-            <!-- 11 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2022/05/Violet-2-400x400.jpg" alt="Violet Design">
-                <div class="card-content">
-                    <h3>Violet</h3>
-                    <p class="price">Rs: 1,150</p>
-                    <p>Stylish finger tip design</p>
-                    <button class="btn" onclick="openPopup('Violet')">Book Now</button>
-                </div>
-            </div>
-            <!-- 12 -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2022/05/JASMIN-1-400x400.jpg" alt="Jasmin Design">
-                <div class="card-content">
-                    <h3>Jasmin</h3>
-                    <p class="price">Rs: 1,300</p>
-                    <p>Classic bridal palm design</p>
-                    <button class="btn" onclick="openPopup('Jasmin')">Book Now</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 2: MOST DEMANDING - 4 DESIGNS AT END -->
-        <h2 class="section-title" style="margin-top: 60px;">Most Demanding Designs</h2>
-        <p class="section-subtitle">Our clients' absolute favorites</p>
-        <div class="designs">
-            <!-- Zahreen -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-16.jpeg" alt="Zahreen Design">
-                <div class="card-content">
-                    <span class="badge">MOST DEMANDING</span>
-                    <h3>Zahreen</h3>
-                    <p class="price">Rs: 1,200</p>
-                    <p>Royal circular mandala with detailed finger work</p>
-                    <button class="btn" onclick="openPopup('Zahreen')">Book Now</button>
-                </div>
-            </div>
-            <!-- Naaz -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-11-600x600.jpeg" alt="Naaz Design">
-                <div class="card-content">
-                    <span class="badge">MOST DEMANDING</span>
-                    <h3>Naaz</h3>
-                    <p class="price">Rs: 890</p>
-                    <p>Elegant trail design with floral centerpiece</p>
-                    <button class="btn" onclick="openPopup('Naaz')">Book Now</button>
-                </div>
-            </div>
-            <!-- Sultana -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-10.jpeg" alt="Sultana Design">
-                <div class="card-content">
-                    <span class="badge">MOST DEMANDING</span>
-                    <h3>Sultana</h3>
-                    <p class="price">Rs: 1,350</p>
-                    <p>Heavy jaali work with backhand detail</p>
-                    <button class="btn" onclick="openPopup('Sultana')">Book Now</button>
-                </div>
-            </div>
-            <!-- Jahanara -->
-            <div class="card">
-                <img src="https://hennabymk.com/wp-content/uploads/2026/05/photo-output-9-scaled.jpeg" alt="Jahanara Design">
-                <div class="card-content">
-                    <span class="badge">MOST DEMANDING</span>
-                    <h3>Jahanara</h3>
-                    <p class="price">Rs: 1,500</p>
-                    <p>Full arm bridal design with intricate patterns</p>
-                    <button class="btn" onclick="openPopup('Jahanara')">Book Now</button>
-                </div>
-            </div>
-        </div>
+    <div class="container" id="products-container">
+        <p style="text-align:center;">Loading designs...</p>
     </div>
 
     <footer>
@@ -255,7 +73,11 @@
             <form onsubmit="sendToWhatsApp(event)">
                 <input type="text" id="name" placeholder="Your Name" required>
                 <input type="tel" id="number" placeholder="Your WhatsApp Number" required>
-                <textarea id="comment" rows="3" placeholder="Date & Time you want to come. Any comments?" required></textarea>
+                
+                <!-- AUTO DATE TIME PICKER -->
+                <input type="datetime-local" id="datetime" required>
+                
+                <textarea id="comment" rows="2" placeholder="Any comments?" ></textarea>
                 <button type="submit">Send Appointment on WhatsApp</button>
             </form>
         </div>
@@ -275,14 +97,70 @@
             event.preventDefault();
             let name = document.getElementById("name").value;
             let number = document.getElementById("number").value;
+            let datetime = document.getElementById("datetime").value;
             let comment = document.getElementById("comment").value;
             let yourWhatsApp = "923367672293"; 
 
-            let message = `New Appointment Request%0A%0A*Design:* ${selectedDesign}%0A*Name:* ${name}%0A*Number:* ${number}%0A*Date/Time:* ${comment}`;
+            let message = `New Appointment Request%0A%0A*Design:* ${selectedDesign}%0A*Name:* ${name}%0A*Number:* ${number}%0A*Date & Time:* ${datetime}%0A*Comment:* ${comment}`;
             let url = `https://wa.me/${yourWhatsApp}?text=${message}`;
             window.open(url, '_blank');
             closePopup();
         }
+
+        // GOOGLE SHEET SE DATA LOAD KARNE KA CODE
+        const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiIcfrUozndhYYfjE-78fFldpHlO4ldstCbq74nDbrWs-nfL-aKhvo-Ndsouh9FAodqXXc_bTid6-m/pub?output=csv";
+
+        async function loadProducts() {
+            try {
+                let res = await fetch(SHEET_URL);
+                let data = await res.text();
+                let rows = data.split("\n").slice(1); // pehli line header hai
+                
+                let normalHTML = `<h2 class="section-title">Our Signature Collection</h2><p class="section-subtitle">Beautiful designs for every occasion</p><div class="designs">`;
+                let demandingHTML = `<h2 class="section-title" style="margin-top: 60px;">Most Demanding Designs</h2><p class="section-subtitle">Our clients' absolute favorites</p><div class="designs">`;
+                let hasNormal = false, hasDemanding = false;
+
+                rows.forEach(row => {
+                    let cols = row.split(",");
+                    if(cols.length < 5) return;
+                    let name = cols[0].trim();
+                    let price = cols[1].trim();
+                    let img = cols[2].trim();
+                    let desc = cols[3].trim();
+                    let category = cols[4].trim();
+                    if(!name) return;
+
+                    let card = `
+                    <div class="card">
+                        <img src="${img}" alt="${name}">
+                        <div class="card-content">
+                            ${category === "Most Demanding" ? '<span class="badge">MOST DEMANDING</span>' : ''}
+                            <h3>${name}</h3>
+                            <p class="price">Rs: ${price}</p>
+                            <p>${desc}</p>
+                            <button class="btn" onclick="openPopup('${name}')">Book Now</button>
+                        </div>
+                    </div>`;
+
+                    if(category === "Most Demanding") {
+                        demandingHTML += card; 
+                        hasDemanding = true;
+                    } else {
+                        normalHTML += card; 
+                        hasNormal = true;
+                    }
+                });
+
+                normalHTML += "</div>";
+                demandingHTML += "</div>";
+                document.getElementById("products-container").innerHTML = (hasNormal ? normalHTML : "") + (hasDemanding ? demandingHTML : "");
+
+            } catch(e) {
+                document.getElementById("products-container").innerHTML = "<p style='text-align:center; color:red;'>Error loading designs. Check Sheet link.</p>";
+                console.log(e);
+            }
+        }
+        loadProducts();
     </script>
 
 </body>
