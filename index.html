@@ -1,80 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[Your Brand Name] - Bridal Henna Artist in Quetta</title>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-  body{background:#FFF8F3;color:#333}
-  .header{background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1599561046251-bfb9465b4c44') center/cover;height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
-  .header h1{font-size:3rem;margin-bottom:10px}
-  .btn{background:#B76E79;color:white;padding:12px 30px;border:none;border-radius:25px;text-decoration:none;font-weight:bold;cursor:pointer}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:50px 10%}
-  .card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1);text-align:center}
-  .card img{width:100%;height:250px;object-fit:cover}
-  .card h3{padding:10px}
-  .card .btn{margin:10px}
-  .appointment{background:#FDEFEF;padding:50px 10%;text-align:center}
-  .appointment input, .appointment select{padding:10px;width:80%;margin:10px 0;border:1px solid #B76E79;border-radius:8px}
-  .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;font-size:24px;text-decoration:none}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Brand Name] - Bridal Henna Artist in Quetta</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background-color: #fdf8f5; color: #333; }
+        header { background: linear-gradient(135deg, #8B4513, #D2691E); color: white; padding: 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .designs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; text-align: center; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card h3 { padding: 15px 10px 5px; color: #8B4513; }
+        .card p { padding: 0 15px 15px; color: #666; font-size: 0.9em; }
+        .btn { display: block; background: #D2691E; color: white; padding: 12px; margin: 0 15px 15px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; text-decoration: none; }
+        .btn:hover { background: #8B4513; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
+        footer a { color: #D2691E; text-decoration: none; }
+
+        /* Popup CSS */
+        .popup { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); }
+        .popup-content { background-color: #fff; margin: 10% auto; padding: 30px; border-radius: 15px; width: 90%; max-width: 500px; position: relative; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: black; }
+        .popup-content h2 { color: #8B4513; margin-bottom: 20px; }
+        .popup-content input, .popup-content textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; }
+        .popup-content button { width: 100%; background: #25D366; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin-top: 10px; }
+        .popup-content button:hover { background: #128C7E; }
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<section class="header">
-  <div>
-    <h1>[Your Name] Henna Art</h1>
-    <p>Bridal, Arabic & Party Henna in Quetta</p>
-    <a href="#appointment" class="btn">Book Your Appointment</a>
-  </div>
-</section>
+    <header>
+        <h1>[Your Name] Henna Art</h1>
+        <p>Bridal & Party Henna Artist in Quetta | Book Your Appointment Today</p>
+    </header>
 
-<!-- GALLERY 8 DESIGNS -->
-<section class="gallery">
-  <h2 style="grid-column:1/-1;text-align:center;font-size:2rem;color:#B76E79">Our Top 8 Henna Designs</h2>
-  
-  <div class="card">
-    <img src="https://i.imgur.com/1.jpg" alt="Bridal Design 1">
-    <h3>Bridal Design #1</h3>
-    <a href="#appointment" class="btn">Book This Design</a>
-  </div>
-  
-  <!-- 7 aur cards copy karo. Image link change karte jao -->
-  <div class="card">
-    <img src="https://i.imgur.com/2.jpg" alt="Arabic Design">
-    <h3>Arabic Design</h3>
-    <a href="#appointment" class="btn">Book This Design</a>
-  </div>
-  
-  <div class="card"><img src="https://i.imgur.com/3.jpg"><h3>Back Hand Design</h3><a href="#appointment" class="btn">Book This Design</a></div>
-  <div class="card"><img src="https://i.imgur.com/4.jpg"><h3>Simple Design</h3><a href="#appointment" class="btn">Book This Design</a></div>
-  <div class="card"><img src="https://i.imgur.com/5.jpg"><h3>Kids Design</h3><a href="#appointment" class="btn">Book This Design</a></div>
-  <div class="card"><img src="https://i.imgur.com/6.jpg"><h3>Feet Design</h3><a href="#appointment" class="btn">Book This Design</a></div>
-  <div class="card"><img src="https://i.imgur.com/7.jpg"><h3>Royal Bridal</h3><a href="#appointment" class="btn">Book This Design</a></div>
-  <div class="card"><img src="https://i.imgur.com/8.jpg"><h3>Dulhan Special</h3><a href="#appointment" class="btn">Book This Design</a></div>
+    <div class="container">
+        <h2 style="text-align:center; margin-bottom: 30px; color: #8B4513;">Our 6 Signature Designs</h2>
+        <div class="designs">
+            
+            <div class="card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd464126b56644d5e91f5cc7a2426e36c1.jpg_220x220q75.jpg_.avif" alt="Bridal Henna Design 1">
+                <h3>Bridal Royal Design</h3>
+                <p>Full hands and feet intricate bridal pattern</p>
+                <button class="btn" onclick="openPopup('Bridal Royal Design')">Book Appointment</button>
+            </div>
 
-</section>
+            <div class="card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S623e1f99566d45be9ae17db8e17de614B.jpg_220x220q75.jpg_.avif" alt="Arabic Henna Design">
+                <h3>Arabic Floral Design</h3>
+                <p>Bold and beautiful Arabic style for hands</p>
+                <button class="btn" onclick="openPopup('Arabic Floral Design')">Book Appointment</button>
+            </div>
 
-<!-- APPOINTMENT FORM -->
-<section class="appointment" id="appointment">
-  <h2>Book Your Henna Appointment</h2>
-  <form action="https://wa.me/92XXXXXXXXXXX" method="get"> 
-    <input type="text" placeholder="Your Name" required><br>
-    <input type="date" required><br>
-    <select required>
-      <option>Select Design</option>
-      <option>Bridal Design #1</option>
-      <option>Arabic Design</option>
-    </select><br>
-    <input type="tel" placeholder="WhatsApp Number" required><br>
-    <button class="btn" type="submit">Send on WhatsApp</button>
-  </form>
-</section>
+            <div class="card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8643d7dae48e430682499a5a50c72b5dR.jpg_220x220q75.jpg_.avif" alt="Back Hand Design">
+                <h3>Back Hand Mandala</h3>
+                <p>Elegant mandala design for back of hand</p>
+                <button class="btn" onclick="openPopup('Back Hand Mandala')">Book Appointment</button>
+            </div>
 
-<!-- WHATSAPP FLOATING BUTTON -->
-<a href="https://wa.me/92XXXXXXXXXXX" class="whatsapp">💬</a>
+            <div class="card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8ff0c172565d484a9348b70ef8724f4cF.jpg_220x220q75.jpg_.avif" alt="Feet Henna Design">
+                <h3>Feet Bridal Design</h3>
+                <p>Complete feet coverage for brides</p>
+                <button class="btn" onclick="openPopup('Feet Bridal Design')">Book Appointment</button>
+            </div>
+
+            <div class="card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se2730ce70f6248eeb299b75c7eedcc08F.jpg_220x220q75.jpg_.avif" alt="Simple Party Design">
+                <h3>Simple Party Design</h3>
+                <p>Quick and cute design for events</p>
+                <button class="btn" onclick="openPopup('Simple Party Design')">Book Appointment</button>
+            </div>
+
+            <div class="card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S564ae24f75304b9ba942a479958dff145.jpg_220x220q75.jpg_.avif" alt="Pakistani Design">
+                <h3>Pakistani Jaali Design</h3>
+                <p>Traditional detailed jaali work</p>
+                <button class="btn" onclick="openPopup('Pakistani Jaali Design')">Book Appointment</button>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact on WhatsApp: <a href="https://wa.me/92XXXXXXXXXXX" target="_blank">+92 XXX XXXXXXX</a></p>
+        <p>© 2026 [Your Brand Name]. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Appointment Popup -->
+    <div id="appointmentPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Book Your Appointment</h2>
+            <p id="selectedDesign" style="margin-bottom:15px; color:#D2691E; font-weight:bold;"></p>
+            <form onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="tel" id="number" placeholder="Your WhatsApp Number" required>
+                <textarea id="comment" rows="3" placeholder="Date & Time you want to come. Any comments?" required></textarea>
+                <button type="submit">Send Appointment on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let selectedDesign = "";
+        function openPopup(design) {
+            selectedDesign = design;
+            document.getElementById("selectedDesign").innerText = "Selected: " + design;
+            document.getElementById("appointmentPopup").style.display = "block";
+        }
+        function closePopup() {
+            document.getElementById("appointmentPopup").style.display = "none";
+        }
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let number = document.getElementById("number").value;
+            let comment = document.getElementById("comment").value;
+            let yourWhatsApp = "92XXXXXXXXXXX"; // <-- YAHAN APNA NUMBER LAGAO BINA + KE
+
+            let message = `New Appointment Request%0A%0A*Design:* ${selectedDesign}%0A*Name:* ${name}%0A*Number:* ${number}%0A*Date/Time:* ${comment}`;
+            let url = `https://wa.me/${yourWhatsApp}?text=${message}`;
+            window.open(url, '_blank');
+            closePopup();
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("appointmentPopup")) {
+                closePopup();
+            }
+        }
+    </script>
 
 </body>
 </html>
