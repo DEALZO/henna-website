@@ -21,7 +21,6 @@
         .section-title { text-align: center; margin-bottom: 10px; color: #8B4513; font-size: 2em; }
         .section-subtitle { text-align: center; margin-bottom: 30px; color: #666; }
 
-        /* GRID - DESKTOP 4 COLUMNS */
         .designs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
         .card { background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; text-align: center; transition: transform 0.3s; }
         .card:hover { transform: translateY(-5px); }
@@ -33,7 +32,6 @@
         .btn { display: block; background: #8B4513; color: white; padding: 10px; border: none; border-radius: 8px; font-size: 0.95em; cursor: pointer; text-decoration: none; width: 100%; }
         .btn:hover { background: #5a2d0c; }
         
-        /* MOST DEMANDING BADGE */
         .badge { background: #D2691E; color: white; font-size: 0.75em; padding: 4px 8px; border-radius: 5px; display: inline-block; margin-bottom: 8px; }
 
         footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
@@ -47,10 +45,7 @@
         .popup-content input, .popup-content textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; }
         .popup-content button { width: 100%; background: #25D366; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin-top: 10px; }
 
-        /* MOBILE RESPONSIVE - 2 PRODUCTS IN 1 ROW */
-        @media(max-width: 1024px) {
-            .designs { grid-template-columns: repeat(3, 1fr); }
-        }
+        @media(max-width: 1024px) { .designs { grid-template-columns: repeat(3, 1fr); } }
         @media(max-width: 768px) {
             header { height: 180px; }
             .designs { grid-template-columns: repeat(2, 1fr); gap: 15px; } /* Mobile 2 column */
@@ -255,7 +250,13 @@
             <form onsubmit="sendToWhatsApp(event)">
                 <input type="text" id="name" placeholder="Your Name" required>
                 <input type="tel" id="number" placeholder="Your WhatsApp Number" required>
-                <textarea id="comment" rows="3" placeholder="Date & Time you want to come. Any comments?" required></textarea>
+                
+                <!-- COMMENT BOX REH GAYA -->
+                <textarea id="comment" rows="2" placeholder="Any comments?" ></textarea>
+
+                <!-- NAYA DATE TIME PICKER ADD KIYA -->
+                <input type="datetime-local" id="datetime" required>
+
                 <button type="submit">Send Appointment on WhatsApp</button>
             </form>
         </div>
@@ -276,9 +277,10 @@
             let name = document.getElementById("name").value;
             let number = document.getElementById("number").value;
             let comment = document.getElementById("comment").value;
+            let datetime = document.getElementById("datetime").value; // NAYA
             let yourWhatsApp = "923367672293"; 
 
-            let message = `New Appointment Request%0A%0A*Design:* ${selectedDesign}%0A*Name:* ${name}%0A*Number:* ${number}%0A*Date/Time:* ${comment}`;
+            let message = `New Appointment Request%0A%0A*Design:* ${selectedDesign}%0A*Name:* ${name}%0A*Number:* ${number}%0A*Date & Time:* ${datetime}%0A*Comment:* ${comment}`; // DATE ADD KI
             let url = `https://wa.me/${yourWhatsApp}?text=${message}`;
             window.open(url, '_blank');
             closePopup();
